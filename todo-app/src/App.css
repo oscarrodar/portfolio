@@ -1,0 +1,127 @@
+/* General body styling */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Main app container */
+.App {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Override CRA's center alignment for the container itself */
+}
+
+.App h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* TodoForm styling - assuming the form is a direct child of .App or has a specific class */
+/* If TodoForm.js has <form className="todo-form">, use .todo-form */
+.App > form {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.App > form input[type="text"].input { /* Targeting the input with class "input" */
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.App > form button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.App > form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* TodoList container styling */
+/* Assuming TodoList renders a div that could take this class, or target structurally */
+.todo-list { /* This class should be added to the root div in TodoList.js */
+  margin-top: 20px;
+}
+
+/* TodoItem styling */
+/* This class should be added to the root div in TodoItem.js */
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0; /* Increased padding for better spacing */
+  border-bottom: 1px solid #eee;
+}
+
+.todo-item:last-child {
+  border-bottom: none; /* Remove border for the last item */
+}
+
+.todo-item span { /* Styling the text part of the todo item */
+  flex-grow: 1;
+  cursor: pointer; /* From TodoItem.js, good to keep consistent if it's clickable */
+  padding-right: 10px; /* Space between text and buttons */
+}
+
+/* Styling for completed todo text */
+.todo-item.completed span { /* Assumes TodoItem adds a 'completed' class when todo.completed is true */
+  color: #aaa;
+  text-decoration: line-through; /* Reinforces if inline style is removed, or works with it */
+}
+
+/* Buttons within TodoItem */
+.todo-item div button { /* Targeting buttons within the div wrapper in TodoItem */
+  padding: 6px 12px;
+  margin-left: 8px;
+  border: 1px solid #ddd;
+  background-color: #f8f9fa;
+  color: #333;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.todo-item div button:hover {
+  background-color: #e9ecef;
+  border-color: #ccc;
+}
+
+/* Specific styling for delete button for a bit of visual distinction if desired */
+.todo-item div button:last-child { /* Assuming delete is the last button */
+  background-color: #dc3545;
+  color: white;
+  border-color: #dc3545;
+}
+
+.todo-item div button:last-child:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+/* Message for no todos */
+.App > p { /* Styling the "No todos yet!" message */
+  text-align: center;
+  color: #777;
+  margin-top: 20px;
+  font-style: italic;
+}
